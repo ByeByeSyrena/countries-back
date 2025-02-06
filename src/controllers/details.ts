@@ -14,8 +14,8 @@ interface Neighbor {
 
 export const countryDetails: RequestHandler = errorHandler(
   async (req, res, next) => {
-    const country = req.query.country as string || "Ukraine";
-    const code = req.query.code as string || "Ukraine";
+    const country = req.query.country as string;
+    const code = req.query.code as string;
 
     if (!country || !code) return ResponseService.error(next, error.countryIsMissing, 404, "list");
 
