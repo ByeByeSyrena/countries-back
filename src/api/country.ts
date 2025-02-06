@@ -31,12 +31,12 @@ export const country = {
     return fetch(url, options);
   },
 
-  async flag(countryCode: string, headers = {}) {
+  async flag(country: string, headers = {}) {
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json", ...headers, },
       body: JSON.stringify({
-        country: countryCode.toLowerCase(),
+        country: country.toLowerCase(),
       })
     };
     const url = `${process.env.COUNTRIESNOW_URL}${externalApi.countriesnow.flag}`;
