@@ -7,7 +7,7 @@ import { ResponseService } from "../utils/ResponseService";
 export const list: RequestHandler = errorHandler(async (_, res, next) => {
   const list = await countries();
 
-  if (!list) return ResponseService.error(next, error.listNotFound, 400, "list");
+  if (!list) return ResponseService.error(next, error.listNotFound, 404, "list");
 
   ResponseService.success(res, list);
 }
